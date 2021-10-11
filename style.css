@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
+/* 
+=============== 
+Variables
+=============== */
+
+:root {
+    /* primary */
+    --Dark_Magenta: hsl(300, 43%, 22%);
+    --Soft_Pink: hsl(333, 80%, 67%);
+    
+    /* Neutral */
+
+    --Grayish_Magenta: hsl(303, 10%, 53%);
+    --Light_Magenta: hsl(300, 24%, 96%);
+    --White: hsl(0, 0%, 100%);
+    
+    /* Typography */
+  
+    /* Body Copy */
+    
+    --Font_size: 15px;
+    
+    /* Font */
+    
+    --Family: "Spartan";/*(https://fonts.google.com/specimen/Spartan)
+    - Weights: 400, 500, 700*/
+}
+
+*{
+    font-family: var(--Family);
+    margin: 0px
+}
+
+body{
+    font-size: var(--Font_size);
+    /* width: 100vw;
+    height: 100vh;  */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: url(images/bg-pattern-top-desktop.svg) top -60px left 0px no-repeat,
+    url(./images/bg-pattern-bottom-desktop.svg) top 100px right -10px no-repeat;
+
+
+}
+
+main{
+    width: 100vw;
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid{
+    width: 70vw;
+    height: 85vh;
+    /* paddng: 2rem 2rem; */
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+    grid-template-areas: 
+        "box1 box2"
+        "box3 box3";
+    
+}
+ /* BOX  */
+ .box{
+    /* padding: 10px; */
+    border: 1px solid black;
+ }
+.box1{
+    grid-area: box1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    color: var(--Dark_Magenta);
+}
+.box1 h1{
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 1; 
+    width: 70%;
+}
+
+.box1 p{
+    font-size: 0.80rem;
+    width: 85%;
+    margin-top: 20px;
+    color : var(--Grayish_Magenta);
+}
+.box2{
+   grid-area: box2;
+}
+
+.box2 .imagen{
+    background: url(images/icon-star.svg)  repeat space ;
+    background-size: 20px auto;
+    width: 87px;
+}
+.box3{
+    grid-area: box3;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+
+}
+/* Contain  */
+.contain{
+    width: 31%;
+    height: 80%;
+    background: blueviolet;
+}
+.contain1{
+    margin-top: -40px;
+    border:2px solid red;
+}
+.contain3{
+    margin-bottom: -40px;
+    border:2px solid black;
+}
+.attribution {
+    font-size: 11px;
+    text-align: center;
+  }
+  .attribution a {
+    color: hsl(228, 45%, 44%);
