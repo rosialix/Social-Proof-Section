@@ -34,13 +34,11 @@ Variables
 
 body{
     font-size: var(--Font_size);
-    /* width: 100vw;
-    height: 100vh;  */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: url(images/bg-pattern-top-desktop.svg) top -60px left 0px no-repeat,
+    background: url(images/bg-pattern-top-desktop.svg) top -80px left -40px no-repeat,
     url(./images/bg-pattern-bottom-desktop.svg) top 100px right -10px no-repeat;
 
 
@@ -55,7 +53,7 @@ main{
 }
 
 .grid{
-    width: 70vw;
+    width: 90vw;
     height: 85vh;
     /* paddng: 2rem 2rem; */
     display: grid;
@@ -75,44 +73,105 @@ main{
     grid-area: box1;
     display: flex;
     flex-direction: column;
-    padding-top: 3rem;
+    padding-top: 1rem;
     color: var(--Dark_Magenta);
 }
 .box1 h1{
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 3.5rem;
     line-height: 1; 
-    width: 70%;
+    width: 80%;
 }
 
 .box1 p{
-    font-size: 0.80rem;
-    width: 85%;
-    margin-top: 20px;
+    font-size: 1.2rem;
+    width: 100%;
+    font-weight: 500;
+    margin-top: 10px;
     color : var(--Grayish_Magenta);
 }
+
+ /* BOX 2 */
 .box2{
    grid-area: box2;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.box2 .box_start{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* padding: 1rem 0; */
+    margin: 1rem;
+    width: 80%;
+    color: var(--Dark_Magenta);
+    background:var(--Light_Magenta);
+    border-radius: 15px;
+    
+ }
+
+ .box_start:nth-child(1) {
+    transform: translateX(-4rem); 
 }
 
-.box2 .imagen{
-    background: url(images/icon-star.svg)  repeat space ;
-    background-size: 20px auto;
-    width: 87px;
+.box_start:nth-child(1):hover {
+    transform: translateX(0); 
 }
+.box_start:nth-child(2):hover {
+   animation: shake-horizontal 2s alternate; 
+}
+.box_start:nth-child(3) {
+    transform: translateX(4rem); 
+}
+
+.box_start:nth-child(3):hover {
+    transform: translateX(0); 
+}
+
+.box2 .start {
+    padding: 1rem 1.5rem;
+}
+
+.box2 .text_start {
+    font-size: 1.2rem;
+}
+
+
 .box3{
     grid-area: box3;
+    margin-top: 1.5rem;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
 
 }
+
+
+
 /* Contain  */
 .contain{
     width: 31%;
     height: 80%;
-    background: blueviolet;
+    background: var(--Dark_Magenta);
+}
+
+.contain .identi{
+    display: flex;
+    justify-content: flex-start;
+    padding: 1rem 2rem;
+}
+.contain .identi img{
+  width: 20%;
+  border-radius: 100%;
+}
+
+.contain .identi .author_info{
+    margin: 1rem 2rem;    
+}
+.contain .identi .author_name{
+    margin-bottom: 0.5rem;    
 }
 .contain1{
     margin-top: -40px;
