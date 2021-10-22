@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
-/* 
-=============== 
+/*
+===============
 Variables
 =============== */
 
@@ -8,21 +8,21 @@ Variables
     /* primary */
     --Dark_Magenta: hsl(300, 43%, 22%);
     --Soft_Pink: hsl(333, 80%, 67%);
-    
+
     /* Neutral */
 
     --Grayish_Magenta: hsl(303, 10%, 53%);
     --Light_Magenta: hsl(300, 24%, 96%);
     --White: hsl(0, 0%, 100%);
-    
+
     /* Typography */
-  
+
     /* Body Copy */
-    
+
     --Font_size: 15px;
-    
+
     /* Font */
-    
+
     --Family: "Spartan";/*(https://fonts.google.com/specimen/Spartan)
     - Weights: 400, 500, 700*/
 }
@@ -33,6 +33,8 @@ Variables
 }
 
 body{
+    width: 100%;
+    min-height: 100vh; 
     font-size: var(--Font_size);
     display: flex;
     justify-content: center;
@@ -40,8 +42,6 @@ body{
     flex-direction: column;
     background: url(images/bg-pattern-top-desktop.svg) top -80px left -40px no-repeat,
     url(./images/bg-pattern-bottom-desktop.svg) top 100px right -10px no-repeat;
-
-
 }
 
 main{
@@ -49,6 +49,7 @@ main{
     height: 95vh;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -59,16 +60,13 @@ main{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: repeat(2,1fr);
-    grid-template-areas: 
+    grid-template-areas:
         "box1 box2"
         "box3 box3";
-    
+
 }
  /* BOX  */
- .box{
-    /* padding: 10px; */
-    border: 1px solid black;
- }
+
 .box1{
     grid-area: box1;
     display: flex;
@@ -79,12 +77,13 @@ main{
 .box1 h1{
     font-weight: 700;
     font-size: 3.5rem;
-    line-height: 1; 
+    line-height: 1;
     width: 80%;
 }
 
 .box1 p{
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    line-height: 1.5rem;
     width: 100%;
     font-weight: 500;
     margin-top: 10px;
@@ -102,31 +101,35 @@ main{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    /* padding: 1rem 0; */
+    transition: all 0.3s;
     margin: 1rem;
     width: 80%;
     color: var(--Dark_Magenta);
     background:var(--Light_Magenta);
     border-radius: 15px;
-    
+
  }
 
  .box_start:nth-child(1) {
-    transform: translateX(-4rem); 
+    transform: translateX(-4rem);
 }
 
 .box_start:nth-child(1):hover {
-    transform: translateX(0); 
+    transform: translateX(0);
+}
+.box_start:nth-child(2) {
+    margin: 1rem 0;
 }
 .box_start:nth-child(2):hover {
-   animation: shake-horizontal 2s alternate; 
+    animation: shake-horizontal 1s alternate;
+
 }
 .box_start:nth-child(3) {
-    transform: translateX(4rem); 
+    transform: translateX(4rem);
 }
 
 .box_start:nth-child(3):hover {
-    transform: translateX(0); 
+    transform: translateX(0);
 }
 
 .box2 .start {
@@ -137,54 +140,181 @@ main{
     font-size: 1.2rem;
 }
 
-
+/* BOX 3 */
 .box3{
     grid-area: box3;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
-
 }
 
 
 
 /* Contain  */
 .contain{
-    width: 31%;
-    height: 80%;
+    width: 30%;
+    height: 75%;
     background: var(--Dark_Magenta);
+    padding: 1.5rem 1rem;
+    border-radius: 1rem;
 }
 
 .contain .identi{
     display: flex;
     justify-content: flex-start;
-    padding: 1rem 2rem;
+    align-items: center;
+    margin-left: 1rem;
 }
 .contain .identi img{
-  width: 20%;
-  border-radius: 100%;
+  border-radius: 50%;
+  width: 15%;
+  height: 15%;
 }
 
 .contain .identi .author_info{
-    margin: 1rem 2rem;    
+    padding-left: 1rem;
 }
 .contain .identi .author_name{
-    margin-bottom: 0.5rem;    
+    margin-bottom: -0.5rem;
+    color: var(--White);
+    font-weight: 700;
+    font-size: 1.3rem;
 }
-.contain1{
-    margin-top: -40px;
-    border:2px solid red;
+
+.contain .identi .author_badge{
+    font-weight: 500;
+    color: var(--Soft_Pink);
 }
-.contain3{
-    margin-bottom: -40px;
-    border:2px solid black;
+
+.contain p{
+    color: var(--Light_Magenta);
+    margin: 1rem 1rem;
+    opacity: 0.8;
+    line-height: 1.5rem;
 }
+
+.contain:nth-child(1) {
+      transform: translateY(-1rem);
+}
+.contain:nth-child(1):hover {
+        transform: translateY(0);
+}
+.contain:nth-child(2):hover {
+      animation: shake-vertical 1s alternate;
+}
+.contain:nth-child(3) {
+      transform: translateY(1rem);
+}
+.contain:nth-child(3):hover {
+        transform: translateY(0);
+}
+
+@media (max-width: 1220px) {
+    body{
+        width: 100%;
+  
+        max-width: 1220px;
+        min-width: 375px;
+    }
+    main{
+        width: 90%;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
+    .grid{
+        width:100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3,1fr);
+        grid-template-areas:
+            "box1" "box2" "box3";
+    }
+    .box1{
+        align-items: center;
+    }
+    .box1 h1{
+        margin-top: -40px;
+        text-align: center;
+        font-size: 2rem;
+    }
+    .box1 p{
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    .box2 {
+        align-items: center;
+    }
+
+    .box2 .box_start{
+       width: 100%; 
+       flex-direction: column;
+       padding-bottom: 1rem;
+     }
+
+     
+
+     .box_start:nth-child(1) {
+        transform: translateX(0);
+    }
+    .box_start:nth-child(2) {
+        margin: 1rem 0;
+    }
+    .box_start:nth-child(3) {
+        transform: translateX(0);
+    } 
+
+    .box3{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box3 .contain{
+        width: 90%;
+    }
+    .contain:nth-child(1) {
+        transform: translateY(0);
+    }
+    .contain:nth-child(2) {
+        margin: 1rem 0;
+    }
+    .contain:nth-child(3) {
+        transform: translateY(0);
+    } 
+
+    
+}
+
 .attribution {
     font-size: 11px;
     text-align: center;
+    margin-bottom: 3rem;
   }
   .attribution a {
     color: hsl(228, 45%, 44%);
   }
+/* animation */
+@keyframes shake-horizontal {
+    0%,
+    100% {
+      transform: translateX(0); }
+    50%,
+    70% {
+      transform: translateX(-0.5rem); }
+    40%,
+    60% {
+      transform: translateX(0.5rem); } }
+
+  @keyframes shake-vertical {
+    0%,
+    100% {
+      transform: translateY(0); }
+    50%,
+    70% {
+      transform: translateY(-0.5rem); }
+    40%,
+    60% {
+      transform: translateY(0.5rem); } }
